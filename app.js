@@ -3,19 +3,22 @@ const cont = document.querySelector(".api-cont");
 import { url } from "/module.js";
 
 async function fetchData() {
-    const response = await fetch(url);
-    console.log(response);
-    await checkApi(response);
+    try {
+        const response = await fetch(url);
+        console.log(response);
+        await checkApi(response);
 
-    await checkApi(response);
-
-    const data = await response.json();
-    console.log(data);
-    mainHtml(data);
+        const data = await response.json();
+        console.log(data);
+        mainHtml(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        cont.innerHTML += "<div><h3>Error loading data</h3></div>";
+    }
 }
 
 async function checkApi(response) {
-    if (api.status === 200) {
+    if (response.status === 200) {
         console.log("OMG ITS WORKING!!!")
     } else {
         throw new Error(response.statusText);
@@ -26,13 +29,13 @@ async function checkApi(response) {
 function mainHtml(data) {
   
     const div = document.createElement("div");
-    const h1 = document.createElement("h1");
+    const h3 = document.createElement("h3");
     const img = document.createElement("img");
 
-    h1.textContent = "OMG RANDOM DOG PICTURES?!?!"
+    h3.textContent = "OMG RANDOM DOG PICTURES?!?!"
     img.src = data.message;
 
-    div.appendChild(h1);
+    div.appendChild(h3);
     div.appendChild(img);
     cont.appendChild(div);
 }

@@ -1,0 +1,32 @@
+* {
+    background-color: #F3EAF4;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.api-cont {
+    min-width: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 500px;
+    border: 10px dotted #E5CEDC;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+
+h3 {
+    color: #BCA3AC;
+    text-align: center;
+}
+
+h1 {
+    color: #8F9491;
+}
