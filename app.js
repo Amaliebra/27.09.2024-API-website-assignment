@@ -7,16 +7,18 @@ async function fetchData() {
     console.log(response);
     await checkApi(response);
 
+    await checkApi(response);
+
     const data = await response.json();
     console.log(data);
     mainHtml(data);
 }
 
-async function checkApi() {
+async function checkApi(response) {
     if (api.status === 200) {
         console.log("OMG ITS WORKING!!!")
     } else {
-        throw new Error(api.statusText);
+        throw new Error(response.statusText);
     }
 }
 
@@ -37,4 +39,4 @@ function mainHtml(data) {
 
 cont.innerHTML += "<div><h1>DOGS</h1></div>";
 
-mainHtml();
+fetchData();
