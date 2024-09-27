@@ -1,6 +1,6 @@
 const cont = document.querySelector(".api-cont");
 
-import { url } from "./module.js";
+export const url = "https://dog.ceo/api/breeds/image/random";
 
 async function fetchData() {
     try {
