@@ -1,6 +1,6 @@
 const cont = document.querySelector(".api-cont");
 
-import { url } from ".module.js";
+import { url } from "./module.js";
 
 async function fetchData() {
     try {
